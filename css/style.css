@@ -1,0 +1,1485 @@
+:root {
+  --primary: #a30c58;        /* Accent Neon Pink - Fuchsia */
+  --dark-bg: #0F0F1B;        /* Background - Deep Night Blue */
+  --light-bg: #F1F1F1;       /* Primary Text - Electric White (used for light backgrounds) */
+  --dark-text: #F1F1F1;      /* Primary Text - Electric White */
+  --light-text: #0F172A;     /* Background - Slate Dark (used for light text) */
+  --secondary-text: #CBD5E1; /* Grayish White - Keeping this as it might be used elsewhere */
+  --card-bg: #1A1A2E;        /* Card Background - Neon Black */
+  --hover-text: #0F172A;     /* Background - Slate Dark */
+  --hover-bg: #06B6D4;        /* Button Hover - Bright Cyan */
+  --success: #10B981;         /* Success - Electric Green */
+  --warning: #FBBF24;         /* Warning - Neon Yellow */
+  --error: #EF4444;           /* Error - Neon Red */
+  --divider: #2E2E3A;        /* Border/Divider - Dim Gray */
+}
+
+body {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.header {
+  background: var(--card-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--divider);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+nav a {
+  color: var(--dark-text);
+  margin: 0 15px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+/* Hero Section */
+.hero-section {
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--dark-bg);
+  padding: 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-content .intro {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin: 0 0 8px 0;
+  font-weight: 400;
+}
+
+.hero-content .name {
+  font-size: 3rem;
+  color: var(--dark-text);
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.hero-content .role {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin: 0 0 20px 0;
+  font-weight: 500;
+  min-height: 50px;
+}
+
+.hero-content .bio {
+  font-size: 1.1rem;
+  color: var(--secondary-text);
+  margin: 0 0 25px 0;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design for Hero */
+@media (max-width: 768px) {
+  .hero-section {
+    height: calc(100vh - 70px);
+    padding: 15px;
+  }
+  
+  .hero-content .intro {
+    font-size: 1.4rem;
+  }
+  
+  .hero-content .name {
+    font-size: 2.2rem;
+  }
+  
+  .hero-content .role {
+    font-size: 1.4rem;
+    min-height: 40px;
+  }
+  
+  .hero-content .bio {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--card-bg);
+  color: var(--dark-text);
+  margin-top: 40px;
+  border-top: 1px solid var(--divider);
+}
+
+/* About Container */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-header {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin: 0;
+  text-align: center;
+}
+
+.about-header .animated-icon {
+  color: var(--primary);
+  margin-right: 15px;
+  animation: aboutIconAnimation 3s ease-in-out infinite;
+  display: inline-block;
+  transform-origin: center;
+}
+
+@keyframes aboutIconAnimation {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1);
+  }
+  25% {
+    transform: scale(1.1) rotate(-5deg);
+    filter: brightness(1.2);
+  }
+  50% {
+    transform: scale(1.2) rotate(0deg);
+    filter: brightness(1.4) drop-shadow(0 0 10px var(--primary));
+  }
+  75% {
+    transform: scale(1.1) rotate(5deg);
+    filter: brightness(1.2);
+  }
+}
+
+.about-header:hover .animated-icon {
+  animation: aboutIconHover 0.6s ease-in-out;
+}
+
+@keyframes aboutIconHover {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.3) rotate(360deg);
+    filter: brightness(1.5) drop-shadow(0 0 15px var(--primary));
+  }
+  100% {
+    transform: scale(1.2) rotate(360deg);
+  }
+}
+
+/* About Card */
+.flip-card {
+  background: transparent;
+  perspective: 1000px;
+  width: 450px;
+  margin: 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  color: var(--dark-text);
+}
+
+.flip-card-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  text-align: left;
+}
+
+.about-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design for Flip Card */
+@media (max-width: 768px) {
+  .flip-card {
+    width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flip-card {
+    width: 280px;
+  }
+}
+
+/* Education */
+.edu-card {
+  background: var(--card-bg);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 10px;
+  color: var(--dark-text);
+  transition: 0.3s ease;
+}
+
+.edu-card:hover {
+  background: var(--hover-bg);
+  color: var(--hover-text);
+  transform: scale(1.03);
+}
+
+.edu-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+
+.edu-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.edu-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  padding: 0 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.skill-card {
+  background: var(--card-bg);
+  padding: 12px;
+  border-radius: 10px;
+  color: var(--dark-text);
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.skill-card:hover {
+  background: var(--hover-bg);
+  color: var(--hover-text);
+  transform: scale(1.05);
+}
+
+.badge {
+  background: var(--primary);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  margin-left: 5px;
+}
+
+/* Projects */
+.filter-bar {
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 8px 14px;
+  background: var(--card-bg);
+  color: var(--dark-text);
+  margin: 0 5px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--hover-bg);
+  color: var(--hover-text);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.project-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  color: var(--dark-text);
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.project-card:hover {
+  background: var(--hover-bg);
+  color: var(--hover-text);
+  transform: scale(1.05);
+}
+
+.project-icon {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--hover-bg);
+  color: var(--hover-text);
+  transform: scale(1.05);
+}
+
+/* Contact */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+}
+
+.qr-img {
+  width: 180px;
+  margin: 20px auto;
+  display: block;
+}
+
+.social-links {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  font-size: 1.8rem;
+  color: var(--dark-text);
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--primary);
+  transform: scale(1.2);
+}
+
+/* Animations */
+.fade-slide {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.fade-slide.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pulse-icon {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+
+/* Education Timeline */
+.timeline {
+  max-width: 800px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.timeline-item {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: 0.3s;
+}
+
+.timeline-item:hover {
+  background: var(--primary);
+  color: var(--hover-text);
+  transform: scale(1.02);
+}
+
+.timeline-icon img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: white;
+  padding: 5px;
+  border: 2px solid var(--primary);
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--dark-text);
+}
+
+.timeline-content .location {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 5px 0;
+}
+
+.edu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  justify-content: center;
+}
+
+.edu-grid span {
+  background: var(--navy);
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: var(--dark-text);
+  transition: 0.3s;
+}
+
+.edu-grid span:hover {
+  background: var(--hover-bg);
+  color: var(--hover-text);
+}
+
+.timeline-content blockquote {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+/* Animation Trigger */
+.fade-slide {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.fade-slide.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.skills-grid,
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  text-align: left;
+}
+
+.skill-item {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.skill-item:hover,
+.tool-item:hover {
+  background: var(--hover-bg);
+  color: var(--hover-text);
+}
+
+.progress {
+  background: #333;
+  height: 8px;
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.progress div {
+  height: 100%;
+  background: var(--primary);
+  width: 0;
+  animation: fillBar 1.5s ease-out forwards;
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.tool-item {
+  background: var(--card-bg);
+  padding: 12px;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.badge {
+  background: var(--primary);
+  color: white;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+/* Contact Header */
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-header h2 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin: 0;
+}
+
+.contact-header h2 i {
+  margin-right: 15px;
+}
+
+/* Contact Container - Side by Side Layout */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+  align-items: start;
+}
+
+/* Contact Details */
+.contact-details {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.contact-details h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.contact-details h3 i {
+  margin-right: 10px;
+}
+
+.contact-details p {
+  margin: 15px 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-details p i {
+  color: var(--primary);
+  width: 20px;
+  text-align: center;
+}
+
+.contact-details a {
+  color: var(--dark-text);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-details a:hover {
+  color: var(--primary);
+}
+
+/* Contact Form Section */
+.contact-form-section {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.contact-form-section h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.contact-form-section h3 i {
+  margin-right: 10px;
+}
+
+/* Social Links */
+.social-links {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  font-size: 1.8rem;
+  color: var(--dark-text);
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--primary);
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .contact-header h2 {
+    font-size: 2rem;
+  }
+  
+  .contact-details,
+  .contact-form-section {
+    padding: 20px;
+  }
+}
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: var(--dark-bg);
+  color: var(--dark-text);
+  font-size: 1rem;
+  border: 1px solid var(--divider);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border: 2px solid var(--primary);
+  background: var(--dark-bg);
+}
+
+.contact-form button {
+  background: var(--primary);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background: var(--hover-bg);
+  color: var(--hover-text);
+  transform: scale(1.05);
+}
+/* PROJECTS SECTION */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.project-card {
+  background-color: #1e2340;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  background-color: #C2185B;
+  color: white;
+}
+
+.project-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #C2185B;
+}
+
+.project-card:hover .project-icon {
+  color: white;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.project-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #C2185B;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.project-btn:hover {
+  background: #A91B60;
+}
+
+/* FILTER BUTTONS */
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: #1e2340;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #C2185B;
+}
+
+/* SECTION HEADING */
+#projects h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: white;
+}
+
+#projects h2 i {
+  margin-right: 0.5rem;
+  color: #C2185B;
+}
+/* SKILLS & TOOLS SECTION */
+#skills {
+  padding: 4rem 1rem;
+  background-color: #0d1025;
+  color: white;
+  text-align: center;
+}
+
+#skills h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.pulse-icon {
+  color: #C2185B;
+  animation: pulse 1.5s infinite;
+  margin-right: 10px;
+}
+
+/* Grid Layout */
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.2rem;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.grid-card {
+  background-color: #1e2340;
+  border-radius: 10px;
+  padding: 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.grid-card i {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #C2185B;
+}
+
+.grid-card:hover {
+  background-color: #C2185B;
+  color: white;
+  transform: translateY(-5px);
+}
+
+.grid-card:hover i {
+  color: white;
+}
+
+/* Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+/* CERTIFICATIONS SECTION */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.cert-card {
+  background: #1e2340;
+  padding: 1rem;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: scale(1.05);
+  background: #C2185B;
+}
+
+.cert-card img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.cert-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.cert-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+/* CERTIFICATIONS SECTION */
+#certifications {
+  padding: 4rem 1rem;
+  background-color: #0d1025;
+  color: white;
+  text-align: center;
+}
+
+#certifications h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.cert-card {
+  background: #1e2340;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px);
+  background-color: #C2185B;
+  color: white;
+}
+
+.cert-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover img {
+  transform: scale(1.05);
+}
+
+.cert-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.cert-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.cert-card .project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #ffffff;
+  color: #1e2340;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  font-size: 0.9rem;
+}
+
+.cert-card .project-btn:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.cert-card:hover .project-btn {
+  background-color: #ffffff;
+  color: #1e2340;
+  border-color: #ffffff;
+}
+
+.cert-card:hover .project-btn:hover {
+  background-color: #f0f0f0;
+  color: #C2185B;
+}
+
+.cert-card .project-btn i {
+  color: #1e2340;
+  transition: color 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.cert-card .project-btn:hover i,
+.cert-card:hover .project-btn:hover i {
+  color: #C2185B;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cert-card img {
+    height: auto;
+  }
+  
+  .cert-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .cert-card p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Animated Icons for Skills */
+.animated-icon {
+  font-size: 1.5rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+  animation: bounce 2s infinite;
+  transition: transform 0.3s ease;
+}
+
+.grid-card:hover .animated-icon {
+  animation: spin 1s ease-in-out;
+  transform: scale(1.2);
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Spin Animation on Hover */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.3);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.2);
+  }
+}
+
+/* Additional hover effects for different icons */
+.grid-card:nth-child(1) .animated-icon { animation-delay: 0s; }
+.grid-card:nth-child(2) .animated-icon { animation-delay: 0.1s; }
+.grid-card:nth-child(3) .animated-icon { animation-delay: 0.2s; }
+.grid-card:nth-child(4) .animated-icon { animation-delay: 0.3s; }
+.grid-card:nth-child(5) .animated-icon { animation-delay: 0.4s; }
+.grid-card:nth-child(6) .animated-icon { animation-delay: 0.5s; }
+.grid-card:nth-child(7) .animated-icon { animation-delay: 0.6s; }
+.grid-card:nth-child(8) .animated-icon { animation-delay: 0.7s; }
+.grid-card:nth-child(9) .animated-icon { animation-delay: 0.8s; }
+.grid-card:nth-child(10) .animated-icon { animation-delay: 0.9s; }
+.grid-card:nth-child(11) .animated-icon { animation-delay: 1s; }
+.grid-card:nth-child(12) .animated-icon { animation-delay: 1.1s; }
+.grid-card:nth-child(13) .animated-icon { animation-delay: 1.2s; }
+
+/* Pulse effect for specific icons */
+.grid-card:nth-child(odd) .animated-icon {
+  animation: pulse-glow 3s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+  }
+}
+
+/* Wiggle effect for some icons */
+.grid-card:nth-child(even) .animated-icon {
+  animation: wiggle 2.5s infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+/* Fade in animation for filtered items */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Filter buttons styling improvements */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--card-bg);
+  border: 2px solid var(--divider);
+  color: var(--dark-text);
+  padding: 0.7rem 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-btn:hover {
+  background: var(--hover-bg);
+  color: var(--hover-text);
+  border-color: var(--hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4);
+}
+
+.filter-btn i {
+  font-size: 1rem;
+}
+
+/* Certification Icon Container */
+.cert-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  margin-bottom: 1rem;
+}
+
+.cert-icon-container .animated-icon {
+  transition: all 0.3s ease;
+}
+
+.cert-card:hover .cert-icon-container .animated-icon {
+  color: white !important;
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Enhanced Certification Icon Animations */
+.cert-icon-container .animated-icon {
+  animation: certFloat 3s ease-in-out infinite;
+  transition: all 0.4s ease;
+}
+
+/* Floating animation for certification icons */
+@keyframes certFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+}
+
+/* Different animations for different certification types */
+.cert-card:nth-child(1) .animated-icon {
+  animation: pythonPulse 2s ease-in-out infinite;
+}
+
+.cert-card:nth-child(2) .animated-icon {
+  animation: webSpin 4s linear infinite;
+}
+
+.cert-card:nth-child(3) .animated-icon {
+  animation: mlBounce 2.5s ease-in-out infinite;
+}
+
+.cert-card:nth-child(4) .animated-icon {
+  animation: htmlShake 3s ease-in-out infinite;
+}
+
+/* Python pulse animation */
+@keyframes pythonPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: brightness(1.3) drop-shadow(0 0 10px #3776ab);
+  }
+}
+
+/* Web development spin animation */
+@keyframes webSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Machine Learning bounce animation */
+@keyframes mlBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-10px) scale(1.05);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+  }
+  75% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+/* HTML shake animation */
+@keyframes htmlShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-3px) rotate(-1deg);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(3px) rotate(1deg);
+  }
+}
+
+/* Extra-curricular activity animations */
+.cert-card:nth-child(1) .animated-icon {
+  animation: trophyGlow 2s ease-in-out infinite alternate;
+}
+
+.cert-card:nth-child(2) .animated-icon {
+  animation: codeFlow 3s ease-in-out infinite;
+}
+
+.cert-card:nth-child(3) .animated-icon {
+  animation: medalSpin 4s linear infinite;
+}
+
+.cert-card:nth-child(4) .animated-icon {
+  animation: chipPulse 2.5s ease-in-out infinite;
+}
+
+/* Trophy glow animation */
+@keyframes trophyGlow {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 5px #FFD700);
+    transform: scale(1);
+  }
+  100% {
+    filter: brightness(1.4) drop-shadow(0 0 20px #FFD700);
+    transform: scale(1.05);
+  }
+}
+
+/* Code flow animation */
+@keyframes codeFlow {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  33% {
+    transform: translateY(-5px) rotate(5deg);
+    filter: hue-rotate(120deg);
+  }
+  66% {
+    transform: translateY(5px) rotate(-5deg);
+    filter: hue-rotate(240deg);
+  }
+}
+
+/* Medal spin animation */
+@keyframes medalSpin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Chip pulse animation */
+@keyframes chipPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.08);
+    filter: brightness(1.3) drop-shadow(0 0 15px #007ACC);
+  }
+}
+
+/* Hover effects for certification cards */
+.cert-card:hover .animated-icon {
+  animation-play-state: paused;
+  transform: scale(1.2) rotate(10deg) !important;
+  filter: brightness(1.5) drop-shadow(0 0 20px currentColor) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Staggered animation delays for visual appeal */
+.cert-grid .cert-card:nth-child(1) .animated-icon { animation-delay: 0s; }
+.cert-grid .cert-card:nth-child(2) .animated-icon { animation-delay: 0.2s; }
+.cert-grid .cert-card:nth-child(3) .animated-icon { animation-delay: 0.4s; }
+.cert-grid .cert-card:nth-child(4) .animated-icon { animation-delay: 0.6s; }
+.cert-grid .cert-card:nth-child(5) .animated-icon { animation-delay: 0.8s; }
+.cert-grid .cert-card:nth-child(6) .animated-icon { animation-delay: 1s; }
+.cert-grid .cert-card:nth-child(7) .animated-icon { animation-delay: 1.2s; }
+.cert-grid .cert-card:nth-child(8) .animated-icon { animation-delay: 1.4s; }
