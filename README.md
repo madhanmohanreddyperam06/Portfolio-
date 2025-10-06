@@ -50,4 +50,7 @@ This website showcases Madhan's journey, skills, education, and projects. It is 
 ## Contact
 
 Madhan Mohan Reddy Peram  
+Mobile - +91 9110395993
+EmailID - madhanmohanreddyperam06@gmail.com
+
 Designed & Built by Madhan © 2025
